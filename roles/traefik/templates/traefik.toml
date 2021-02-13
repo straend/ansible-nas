@@ -5,6 +5,9 @@
   [entryPoints.web.http.redirections.entryPoint]
     to = "websecure"
 
+  [entryPoints.synapse]
+    address = ":8448"
+
   [entryPoints.websecure]
     address = ":{{ traefik_port_https }}"
 
@@ -44,3 +47,10 @@
 
       [certificatesResolvers.letsencrypt.acme.dnsChallenge]
         provider = "{{ traefik_dns_provider }}"
+
+  [certificatesResolvers.tls]
+    [certificatesResolvers.tls.acme]
+      email = "{{ ansible_nas_email }}"
+      storage = "/letsencrypt/acme_tls.json"
+      caserver = "{{ traefik_acme_server }}"
+      [certificatesResolvers.tls.acme.tlsChallenge]
