@@ -1,3 +1,4 @@
+---
 ##                       ._____.   .__
 ##  _____    ____   _____|__\_ |__ |  |   ____             ____ _____    ______
 ##  \__  \  /    \ /  ___/  || __ \|  | _/ __ \   ______  /    \\__  \  /  ___/
@@ -19,11 +20,7 @@
 jellyfin_enabled: false
 youtubedlmaterial_enabled: false
 
-# News
-miniflux_enabled: false
-
 # System Management
-glances_enabled: false
 stats_enabled: false
 guacamole_enabled: false
 virtual_desktop_enabled: false
@@ -300,28 +297,11 @@ gitlab_port_https: "4443"
 gitlab_port_ssh: "422"
 
 ###
-### Glances
-###
-glances_available_externally: "false"
-glances_port_one: "61208"
-glances_port_two: "61209"
-
-
-###
 ### Guacamole
 ###
 guacamole_available_externally: "false"
 guacamole_data_directory: "{{ docker_home }}/guacamole"
 guacamole_port: "8090"
-
-###
-### Miniflux
-###
-miniflux_available_externally: "false"
-miniflux_data_directory: "{{ docker_home }}/miniflux"
-miniflux_admin_username: admin
-miniflux_admin_password: supersecure
-miniflux_port: "8070"
 
 ###
 ### Krusader
